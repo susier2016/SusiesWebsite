@@ -270,7 +270,7 @@
 
         button.accordion {
             background-color: #eee;
-            color: #444;
+            color: black;
             cursor: pointer;
             padding: 15px;
             width: 100%;
@@ -288,7 +288,7 @@
         }
 
         div.panel {
-            padding: 0 18px;
+            padding: 0px 18px;
             background-color: white;
             max-height: 0px;
             overflow: hidden;
@@ -301,13 +301,36 @@
             opacity: 1;
             max-height: 500px;
         }
+
+        button.gobtn {
+            background-color: #4CAF50;
+            cursor: pointer;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            font-family: 'Roboto Condensed';
+            width: 100%;
+        }
+
+        button.gobtn.active,
+        button.gobtn:hover {
+            background-color: #3e8e41;
+        }
+
+        button:focus {
+            outline: 0;
+        }
     </style>
 </head>
 
 <body>
-  <div class="container blue topBotomBordersOut fixed">
-      <a href="index.html">HOME</a>
-      <!--<div class="dropdown">
+    <div class="container blue topBotomBordersOut fixed">
+        <a href="index.html">HOME</a>
+        <!--<div class="dropdown">
           <p href="about.html" class="dropbtn astyle">PROJECTS</p>
           <div class="dropdown-content">
               <p></p>
@@ -319,37 +342,57 @@
               <p></p>
           </div>
       </div>-->
-      <a href="other.html">PROJECTS</a>
-      <a href="comics.html">COMICS</a>
-      <a href="blog.html">BLOG</a>
-  </div>
+        <a href="other.html">PROJECTS</a>
+        <a href="comics.html">COMICS</a>
+        <a href="blog.html">BLOG</a>
+    </div>
     <br>
     <br>
     <br>
     <p></p>
-    <div class='container-fluid'>
-        <button class="accordion">RANDOM NAME GENERATOR</button>
-        <div class="panel">
-            <br>
-            <p>This was one of the first projects I successfully made that included JavaScript. I thought it would be amusing to see what random names your could make by mashing an adjective and a noun together, so I created this. It uses a list of 50+ adjectives and
-            a list of 50+ nouns, and the program takes one of each and puts it together, creating a completely unexpected name.</p>
-            <h1></h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <button class="accordion">RANDOM NAME GENERATOR</button>
+                <div class="panel">
+                    <br>
+                    <p>This was one of the first projects I successfully made that included JavaScript. I thought it would be amusing to see what random names your could make by mashing an adjective and a noun together, so I created this. It uses a list
+                        of 50+ adjectives and a list of 50+ nouns, and the program takes one of each and puts it together, creating a completely unexpected name.</p>
+                    <h1></h1>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button id="NameGen" class="gobtn">GO</button>
+            </div>
         </div>
 
-        <button class="accordion">MASTERY TIME CALCULATOR</button>
-        <div class="panel">
-            <br>
-            <p>This was the second project I created that included JavaScript. I wondered how long it would take to master something
-            based on Malcom Gladwell's theory, so I created this engine, which calculates the time it would take one to master
-            something based on the number of hours they practice a day and the number of days they practice a week.</p>
-            <h1></h1>
+        <div class="row">
+            <div class="col-md-10">
+                <button class="accordion">MASTERY TIME CALCULATOR</button>
+                <div class="panel">
+                    <br>
+                    <p>This was the second project I created that included JavaScript. I wondered how long it would take to master something based on Malcom Gladwell's theory, so I created this engine, which calculates the time it would take one to master
+                        something based on the number of hours they practice a day and the number of days they practice a week.</p>
+                    <h1></h1>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button id="MasterTime" class="gobtn">GO</button>
+            </div>
         </div>
 
-        <button class="accordion">DOUGHNUTS</button>
-        <div id="foo" class="panel">
-            <br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <h1></h1>
+        <div class="row">
+            <div class="col-md-10">
+                <button class="accordion">DOUGHNUTS</button>
+                <div class="panel">
+                    <br>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <h1></h1>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button id="Donuts" class="gobtn">GO</button>
+            </div>
         </div>
     </div>
     <script>
@@ -362,6 +405,20 @@
                 this.nextElementSibling.classList.toggle("show");
             }
         }
+
+        //Routing
+        $("#NameGen").click( function() {
+          document.location="namegen.html";
+        });
+
+        $("#MasterTime").click( function() {
+          document.location="masterytime.html";
+        });
+
+        $("#Donuts").click( function() {
+          document.location="index.html";
+        });
+
     </script>
 </body>
 
